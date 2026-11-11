@@ -6,7 +6,6 @@
 | **Live app** | https://ajaia-assesment.netlify.app/ |
 | **Source code (GitHub)** | https://github.com/malikahmadmukhtar/ajaia_assesment |
 | **Walkthrough video** | https://drive.google.com/file/d/1IVLQ1KPC-girmWKHp-leGSQC-JmD8GMb/view?usp=sharing (also in `VIDEO_URL.txt`) |
-| **Google Drive folder** | `<ADD DRIVE FOLDER URL>` |
 
 ## Test accounts
 Sign up with any email, or use a demo account (one-click buttons on the login page, password `demo1234`):
