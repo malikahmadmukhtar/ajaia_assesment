@@ -1,7 +1,7 @@
 # AI-native workflow note
 
 ## Tools
-- **Claude Code** (VS Code extension) as a pair programmer for planning, scaffolding, writing code and tests, and running builds, tests and smoke tests.
+- **Claude Code** as a pair programmer for planning, scaffolding, and cursor for  writing code and tests, and running builds, tests and smoke tests.
 - The product itself has no AI features. I spent the time on the editor, file handling, sharing and the deploy path.
 
 ## Where AI materially sped things up
