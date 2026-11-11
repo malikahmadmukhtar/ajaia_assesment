@@ -1,0 +1,15 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[functions]
+  node_bundler = "esbuild"
+
+[dev]
+  framework = "#custom"
+  command = "npm run dev:web"
+  targetPort = 5173
+  port = 8888
+
+# SPA fallback lives in redirects/_redirects and is copied into dist at build time only,
+# so `netlify dev` doesn't rewrite Vite's dev-server paths to index.html.
