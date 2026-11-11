@@ -1,10 +1,14 @@
-import { MongoClient, type Collection } from 'mongodb';
+import { Binary, MongoClient, type Collection } from 'mongodb';
 import type { AttachmentMeta, DocRecord, Role, User } from '../../../src/shared/types';
 import { normalizeDoc, type Repo, type StoredAttachment, type StoredUser, type UpdateResult } from './repo';
 
 type UserDoc = { _id: string; email: string; name: string; passwordHash: string };
 type DocDoc = Omit<DocRecord, 'id'> & { _id: string };
-type AttDoc = Omit<AttachmentMeta, 'id'> & { _id: string; data: Buffer };
+type AttDoc = Omit<AttachmentMeta, 'id'> & { _id: string; data: Binary | Buffer };
+
+/** The driver returns BSON `Binary` by default (Buffer.from(Binary) is empty), so unwrap it explicitly. */
+export const binaryToBytes = (v: Binary | Uint8Array): Uint8Array =>
+  v instanceof Binary ? new Uint8Array(v.value()) : new Uint8Array(v);
 
 const toUser = (u: UserDoc): User => ({ id: u._id, email: u.email, name: u.name });
 const toStored = (u: UserDoc): StoredUser => ({ ...toUser(u), passwordHash: u.passwordHash });
@@ -114,7 +118,7 @@ export class MongoRepo implements Repo {
     const a = await this.atts.findOne({ _id: id, docId });
     if (!a) return null;
     const { _id, data, ...rest } = a;
-    return { id: _id, ...rest, data: new Uint8Array(data.buffer ? Buffer.from(data as unknown as Buffer) : data) };
+    return { id: _id, ...rest, data: binaryToBytes(data) };
   }
   async deleteAttachment(docId: string, id: string) { return (await this.atts.deleteOne({ _id: id, docId })).deletedCount === 1; }
   async deleteAttachmentsFor(docId: string) { await this.atts.deleteMany({ docId }); }

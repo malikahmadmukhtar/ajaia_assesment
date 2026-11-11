@@ -5,7 +5,7 @@
 |---|---|
 | **Live app** | https://ajaia-assesment.netlify.app/ |
 | **Source code (GitHub)** | https://github.com/malikahmadmukhtar/ajaia_assesment |
-| **Walkthrough video** | `<ADD VIDEO URL>` (also in `VIDEO_URL.txt`) |
+| **Walkthrough video** | https://drive.google.com/file/d/1IVLQ1KPC-girmWKHp-leGSQC-JmD8GMb/view?usp=sharing (also in `VIDEO_URL.txt`) |
 | **Google Drive folder** | `<ADD DRIVE FOLDER URL>` |
 
 ## Test accounts
@@ -24,7 +24,7 @@ Sign up with any email, or use a demo account (one-click buttons on the login pa
 ## What's in this folder
 | Item | Location |
 |---|---|
-| Source code | `src/` (React app), `netlify/functions/` (API), `tests/` (44 Vitest tests) |
+| Source code | `src/` (React app), `netlify/functions/` (API), `tests/` (45 Vitest tests) |
 | Setup and run instructions | `README.md` |
 | Architecture note | `ARCHITECTURE.md` |
 | AI workflow note | `AI_WORKFLOW.md` |

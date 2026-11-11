@@ -47,7 +47,7 @@ npm run dev        # netlify dev → http://localhost:8888
 With no `MONGODB_URI`, local dev uses a JSON file store at `.data/dev-store.json`: nothing else to set up. **If you have a `.env` with a real `MONGODB_URI`, `netlify dev` will use that database**; to force the file store anyway run `LOCAL_STORE=1 npm run dev`. To use MongoDB, copy `.env.example` to `.env` and set `MONGODB_URI` (with a database name) and `SESSION_SECRET`.
 
 ```bash
-npm test           # Vitest: 44 tests
+npm test           # Vitest: 45 tests
 npm run typecheck
 npm run build
 ```

@@ -63,3 +63,15 @@ describe('attachments', () => {
     expect(first.id).toBeTruthy();
   });
 });
+
+describe('mongo binary handling', () => {
+  it('unwraps BSON Binary instead of producing an empty buffer (regression: empty downloads in production)', async () => {
+    const { Binary, BSON } = await import('mongodb');
+    const { deserialize, serialize } = BSON;
+    const { binaryToBytes } = await import('../netlify/functions/lib/mongoRepo');
+    const stored = deserialize(serialize({ data: Buffer.from('%PDF-1.4 hello') })).data; // what the driver returns
+    expect(stored).toBeInstanceOf(Binary);
+    expect(new TextDecoder().decode(binaryToBytes(stored))).toBe('%PDF-1.4 hello');
+    expect(new TextDecoder().decode(binaryToBytes(new Uint8Array([104, 105])))).toBe('hi');
+  });
+});

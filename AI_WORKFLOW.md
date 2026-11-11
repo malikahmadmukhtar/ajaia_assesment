@@ -23,7 +23,7 @@
   - There is no real-time co-editing; a stale save gets a clear 409 and is never silently overwritten.
 
 ## How I verified
-- **Automated:** 44 Vitest tests covering:
+- **Automated:** 45 Vitest tests covering:
   - sharing and permissions (owner, editor, viewer, stranger)
   - sign-up, login and lockout
   - the edit-request flow
@@ -36,6 +36,6 @@
 
   Also: strict TypeScript typecheck and a production Netlify build.
 - **Runtime:** curl smoke tests against `netlify dev` and against the bundled production function. This is what caught the bundling and proxy bugs that unit tests couldn't.
-- **Live deployment:** smoke-tested the deployed app against MongoDB Atlas, which exercises the Mongo code paths that have no automated tests.
+- **Live deployment:** smoke-tested the deployed app against MongoDB Atlas, which exercises the Mongo code paths that have no automated tests. That is where I found a production-only bug: attachment downloads were empty because the driver returns BSON `Binary`, which my conversion turned into an empty buffer. Fixed, with a regression test.
 - **UX:** clicked through the main flows on the deployed app with two browser profiles: sign-up and login, create, edit and autosave, import, sharing and the owned/shared views, edit-access requests, attachments and export.
 - **Known gaps:** there are no browser/E2E tests and no automated tests for the Mongo repository. Both were verified manually on the live deployment only.
