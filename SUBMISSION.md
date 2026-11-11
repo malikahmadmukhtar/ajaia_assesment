@@ -3,7 +3,8 @@
 ## Links
 | | URL |
 |---|---|
-| **Live app** | `<ADD LIVE URL>` |
+| **Live app** | https://ajaia-assesment.netlify.app/ |
+| **Source code (GitHub)** | https://github.com/malikahmadmukhtar/ajaia_assesment |
 | **Walkthrough video** | `<ADD VIDEO URL>` (also in `VIDEO_URL.txt`) |
 | **Google Drive folder** | `<ADD DRIVE FOLDER URL>` |
 

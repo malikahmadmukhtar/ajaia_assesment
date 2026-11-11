@@ -2,7 +2,7 @@
 
 A small Google-Docs-inspired app: sign up, create and rename rich-text documents, import `.txt` / `.md` / `.docx` files (new document **or into an existing draft**), attach files to a document, share with other users (editor or view-only), and request edit access as a viewer.
 
-**Live app:** `<ADD NETLIFY URL>`  ·  **Walkthrough video:** see `VIDEO_URL.txt`
+**Live app:** https://ajaia-assesment.netlify.app/  ·  **Source:** https://github.com/malikahmadmukhtar/ajaia_assesment  ·  **Walkthrough video:** see `VIDEO_URL.txt`
 
 ## Try it in 60 seconds (reviewers)
 Sign up with any email, or use a demo account (password **`demo1234`**; one-click buttons on the login page):
